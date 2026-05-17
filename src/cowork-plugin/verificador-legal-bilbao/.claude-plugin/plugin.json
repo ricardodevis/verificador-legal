@@ -1,0 +1,22 @@
+{
+  "name": "verificador-legal-bilbao",
+  "version": "1.0.0",
+  "description": "Verifica citas jurídicas (jurisprudencia, doctrina, normativa) en escritos legales españoles y europeos contra fuentes oficiales (CENDOJ, BOE, TC, EUR-Lex, Dialnet). Orquesta el sistema de Managed Agents desplegado en el workspace de Anthropic.",
+  "author": {
+    "name": "Bilbao.AI",
+    "email": "ricardo@bilbao.ai"
+  },
+  "homepage": "https://bilbao.ai",
+  "license": "Apache-2.0",
+  "keywords": [
+    "legal",
+    "jurisprudencia",
+    "verificacion",
+    "auditoria",
+    "espanol",
+    "cendoj",
+    "boe",
+    "tc",
+    "eur-lex"
+  ]
+}

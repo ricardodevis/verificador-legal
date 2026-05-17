@@ -1,0 +1,8 @@
+.env
+.agent-ids.json
+__pycache__/
+*.pyc
+logs/
+.venv/
+.pytest_cache/
+skill/verificador-jurisprudencia-es.zip

@@ -1,0 +1,47 @@
+name: Propuesta de feature
+description: Sugerir una nueva funcionalidad o mejora
+title: "[feat] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema que resuelve
+      description: Qué necesidad del despacho/letrado cubre esta feature
+      placeholder: |
+        En despachos de derecho administrativo trabajamos con normativa
+        autonómica que cambia frecuentemente. Actualmente el sistema...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Propuesta concreta
+      description: Cómo te imaginas la solución
+      placeholder: |
+        Añadir soporte para el BOPA (Boletín Oficial del Principado
+        de Asturias) en el customizador.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Ámbito de la feature
+      options:
+        - Nuevo patrón de extracción de citas
+        - Nueva fuente oficial (boletín autonómico u otro)
+        - Mejora de prompt de sub-agente
+        - Nueva especialidad o configuración por despacho
+        - Mejora de UX del instalador
+        - Mejora de informe / render
+        - Otro
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+      description: ¿Hay workarounds actuales? ¿Por qué no son suficientes?

@@ -1,0 +1,79 @@
+name: Reporte de bug
+description: Reportar un comportamiento incorrecto del verificador o del instalador
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción del problema
+      description: Qué pasó y qué esperabas que pasara
+      placeholder: |
+        Al ejecutar /verificar-legal con un escrito de derecho civil, el sistema...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      description: Listado numerado, lo más concreto posible
+      placeholder: |
+        1. Instalé el plugin v1.0.0
+        2. Lancé /instalar-verificador-legal
+        3. Configuré como despacho "X", especialidad civil
+        4. Lancé /verificar-legal con escrito.docx (anonimizado)
+        5. Resultado inesperado en cita STC X/YYYY
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Versión del plugin
+      description: Visible en el manifest.json o en GitHub releases
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Sistema operativo
+      options:
+        - macOS 14+ (Sonoma/Sequoia)
+        - macOS 13 o anterior
+        - Linux (Ubuntu/Debian)
+        - Linux (otro)
+        - Otro
+    validations:
+      required: true
+
+  - type: input
+    id: python
+    attributes:
+      label: Versión de Python
+      description: "`python3 --version`"
+      placeholder: "Python 3.11.x"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs relevantes
+      description: |
+        Adjunta líneas de `logs/audit-<session>.jsonl` o output del bootstrap.
+        **NO incluyas la API key ni el escrito original** si contiene
+        información sujeta a secreto profesional.
+      render: shell
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Verificaciones previas
+      options:
+        - label: He ejecutado `python despliegue/05_validar_ids.py` y el resultado es 8 OK.
+          required: false
+        - label: He revisado `troubleshooting.md` y mi caso no aparece.
+          required: false
+        - label: No estoy adjuntando ninguna API key.
+          required: true

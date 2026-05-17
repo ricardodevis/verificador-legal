@@ -1,0 +1,20 @@
+{
+  "name": "verificador-legal-installer-bilbao",
+  "version": "1.0.0",
+  "description": "Instalador del Verificador de Jurisprudencia y Doctrina de Bilbao.AI. Despliega en el workspace de Anthropic del despacho los recursos necesarios (Skill remota, 5 sub-agentes, memory store, coordinador) y configura el plugin local /verificar-legal. Requiere Cowork (escritorio) o Claude Code — NO funciona en claude.ai web.",
+  "author": {
+    "name": "Bilbao.AI",
+    "email": "ricardo@bilbao.ai"
+  },
+  "homepage": "https://bilbao.ai",
+  "license": "Apache-2.0",
+  "keywords": [
+    "installer",
+    "legal",
+    "jurisprudencia",
+    "verificacion",
+    "bilbao-ai",
+    "abogacia",
+    "despacho-juridico"
+  ]
+}

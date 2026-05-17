@@ -1,0 +1,60 @@
+# Anthropic credentials
+.env
+.agent-ids.json
+*.api-key
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+env/
+ENV/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs y outputs del proyecto en runtime
+logs/
+*.log
+
+# Skill ZIPs intermedios
+src/skill/*.zip
+
+# Build artifacts
+*.plugin
+*.tgz
+*.zip
+!src/cowork-plugin/verificador-legal-installer-bilbao/**/*.md
+!docs/**/*
+
+# Macros temporales
+/tmp/
