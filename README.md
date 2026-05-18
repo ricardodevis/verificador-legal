@@ -5,14 +5,14 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-26%2F26%20passing-brightgreen)](src/pruebas/)
-[![Release](https://img.shields.io/badge/release-v1.0.1-blue)](https://github.com/ricardodevis/verificador-legal/releases/latest)
-[![Download](https://img.shields.io/badge/⬇_descargar_plugin-v1.0.1-success?style=for-the-badge)](https://github.com/ricardodevis/verificador-legal/releases/latest/download/verificador-legal.plugin)
+[![Release](https://img.shields.io/badge/release-v1.0.2-blue)](https://github.com/ricardodevis/verificador-legal/releases/latest)
+[![Download](https://img.shields.io/badge/⬇_descargar_plugin-v1.0.2-success?style=for-the-badge)](https://github.com/ricardodevis/verificador-legal/releases/latest/download/verificador-legal.plugin)
 
 ## ⬇️ Descarga directa
 
 | Artefacto | Enlace | Tamaño |
 |---|---|---|
-| **Plugin de Cowork** (recomendado) | [verificador-legal.plugin](https://github.com/ricardodevis/verificador-legal/releases/latest/download/verificador-legal.plugin) | 14 KB |
+| **Plugin de Cowork** (recomendado) | [verificador-legal.plugin](https://github.com/ricardodevis/verificador-legal/releases/latest/download/verificador-legal.plugin) | 111 KB |
 | Hash SHA-256 (verificar integridad) | [verificador-legal.plugin.sha256](https://github.com/ricardodevis/verificador-legal/releases/latest/download/verificador-legal.plugin.sha256) | < 1 KB |
 | Manifest (metadatos del release) | [manifest.json](https://github.com/ricardodevis/verificador-legal/releases/latest/download/manifest.json) | 4 KB |
 | Código fuente (clonar) | `git clone https://github.com/ricardodevis/verificador-legal.git` | — |
