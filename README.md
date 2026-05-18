@@ -5,15 +5,15 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-26%2F26%20passing-brightgreen)](src/pruebas/)
-[![Release](https://img.shields.io/badge/release-v1.0.0-blue)](https://github.com/ricardodevis/verificador-legal/releases/latest)
-[![Download](https://img.shields.io/badge/⬇_descargar_plugin-v1.0.0-success?style=for-the-badge)](https://github.com/ricardodevis/verificador-legal/releases/latest/download/verificador-legal-bilbao.plugin)
+[![Release](https://img.shields.io/badge/release-v1.0.1-blue)](https://github.com/ricardodevis/verificador-legal/releases/latest)
+[![Download](https://img.shields.io/badge/⬇_descargar_plugin-v1.0.1-success?style=for-the-badge)](https://github.com/ricardodevis/verificador-legal/releases/latest/download/verificador-legal.plugin)
 
 ## ⬇️ Descarga directa
 
 | Artefacto | Enlace | Tamaño |
 |---|---|---|
-| **Plugin de Cowork** (recomendado) | [verificador-legal-bilbao.plugin](https://github.com/ricardodevis/verificador-legal/releases/latest/download/verificador-legal-bilbao.plugin) | 108 KB |
-| Hash SHA-256 (verificar integridad) | [verificador-legal-bilbao.plugin.sha256](https://github.com/ricardodevis/verificador-legal/releases/latest/download/verificador-legal-bilbao.plugin.sha256) | < 1 KB |
+| **Plugin de Cowork** (recomendado) | [verificador-legal.plugin](https://github.com/ricardodevis/verificador-legal/releases/latest/download/verificador-legal.plugin) | 14 KB |
+| Hash SHA-256 (verificar integridad) | [verificador-legal.plugin.sha256](https://github.com/ricardodevis/verificador-legal/releases/latest/download/verificador-legal.plugin.sha256) | < 1 KB |
 | Manifest (metadatos del release) | [manifest.json](https://github.com/ricardodevis/verificador-legal/releases/latest/download/manifest.json) | 4 KB |
 | Código fuente (clonar) | `git clone https://github.com/ricardodevis/verificador-legal.git` | — |
 
@@ -131,7 +131,7 @@ Más detalle en [`docs/arquitectura/fallback-y-estados.md`](docs/arquitectura/fa
 Descarga el plugin de Cowork desde la última [release](https://github.com/ricardodevis/verificador-legal/releases/latest):
 
 ```
-verificador-legal-bilbao.plugin
+verificador-legal.plugin
 ```
 
 Doble click → Cowork lo registra → `/instalar-verificador-legal` → conversación de 10 min.
