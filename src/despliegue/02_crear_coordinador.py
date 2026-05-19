@@ -82,7 +82,12 @@ def main() -> int:
     print("Creando coordinador...")
 
     system = (PROMPTS_DIR / "coordinator-system.md").read_text(encoding="utf-8")
-    modelo = os.environ.get("DEFAULT_MODEL_OPUS", "claude-opus-4-7")
+    # Estrategia mixta v1.0.3: coordinador en Sonnet (antes Opus). El .env del
+    # despacho puede sobreescribir con COORDINATOR_MODEL para rollback.
+    modelo = os.environ.get(
+        "COORDINATOR_MODEL",
+        os.environ.get("DEFAULT_MODEL_SONNET", "claude-sonnet-4-6"),
+    )
 
     agente_coord = _create_agent(
         client,

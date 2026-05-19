@@ -17,6 +17,43 @@ Cambios significativos en el proyecto. Formato basado en
 
 ---
 
+## [1.0.3] — 2026-05-19
+
+### Cambiado — Estrategia mixta de modelos por agente
+
+- Coordinador: Opus 4.7 → Sonnet 4.6.
+- `verificador-doctrina`: Opus 4.7 → Sonnet 4.6, con compensación de
+  rigor en el system prompt (regla cero + tres patrones
+  contraadversariales).
+- Resto sin cambios: CENDOJ/TC/EUR-Lex en Sonnet 4.6, BOE en Haiku 4.5.
+
+### Añadido
+
+- Variables de entorno por agente para rollback granular:
+  `COORDINATOR_MODEL`, `DOCTRINA_MODEL`, `CENDOJ_MODEL`, `TC_MODEL`,
+  `EURLEX_MODEL`, `BOE_MODEL`. Sobreescriben los defaults del agente
+  sin tocar código.
+- Bloque "Rigurosidad aumentada" al final de
+  `prompts/sub-doctrina-system.md` con la regla cero de tres criterios
+  simultáneos y tres patrones contraadversariales canónicos (autor
+  real + artículo inventado, autor real + atribución falsa, autor
+  inventado con apellido plausible).
+
+### Justificación
+
+Análisis completo en `docs/analisis-modelos.md`. TL;DR: el coordinador
+hace trabajo estructural y la verificación de doctrina se reduce a
+matching documental literal — ambos al alcance de Sonnet con prompt
+disciplinado. Ahorro esperado: 45-55% por verificación.
+
+### Operativa de rollback
+
+Editar `.env` del despacho con `COORDINATOR_MODEL=claude-opus-4-7` y/o
+`DOCTRINA_MODEL=claude-opus-4-7`, y re-ejecutar `bash bootstrap.sh`
+(idempotente: actualiza los agentes existentes).
+
+---
+
 ## [1.0.0] — 2026-05-17
 
 Primera versión pública open source bajo Apache License 2.0.

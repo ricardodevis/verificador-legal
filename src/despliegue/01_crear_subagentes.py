@@ -56,9 +56,18 @@ def main() -> int:
     client = anthropic.Anthropic(api_key=api_key)
     ids = cargar_ids()
 
+    # Modelos base (defaults razonables si .env no los redefine)
     modelo_sonnet = os.environ.get("DEFAULT_MODEL_SONNET", "claude-sonnet-4-6")
-    modelo_haiku = os.environ.get("DEFAULT_MODEL_HAIKU", "claude-haiku-4-5")
-    modelo_opus = os.environ.get("DEFAULT_MODEL_OPUS", "claude-opus-4-7")
+    modelo_haiku = os.environ.get("DEFAULT_MODEL_HAIKU",
+                                  "claude-haiku-4-5-20251001")
+    # Modelos por agente (con fallback al base). Estrategia mixta v1.0.3:
+    # cendoj/tc/eurlex/doctrina/coordinador → Sonnet, boe → Haiku.
+    # El .env del despacho puede sobreescribir cualquiera para rollback.
+    modelo_cendoj = os.environ.get("CENDOJ_MODEL", modelo_sonnet)
+    modelo_tc = os.environ.get("TC_MODEL", modelo_sonnet)
+    modelo_eurlex = os.environ.get("EURLEX_MODEL", modelo_sonnet)
+    modelo_boe = os.environ.get("BOE_MODEL", modelo_haiku)
+    modelo_doctrina = os.environ.get("DOCTRINA_MODEL", modelo_sonnet)
 
     # Toolset por sub-agente.
     toolset_scoped_web = [{
@@ -79,19 +88,19 @@ def main() -> int:
     toolset_full = [{"type": "agent_toolset_20260401"}]
 
     definiciones: List[Tuple[str, str, str, list, str]] = [
-        ("verificador-cendoj", modelo_sonnet, "sub-cendoj-system.md",
+        ("verificador-cendoj", modelo_cendoj, "sub-cendoj-system.md",
          toolset_scoped_web,
          "Verifica jurisprudencia española contra CENDOJ"),
-        ("verificador-tc", modelo_sonnet, "sub-tc-system.md",
+        ("verificador-tc", modelo_tc, "sub-tc-system.md",
          toolset_scoped_web,
          "Verifica jurisprudencia del Tribunal Constitucional"),
-        ("verificador-eurlex", modelo_sonnet, "sub-eurlex-system.md",
+        ("verificador-eurlex", modelo_eurlex, "sub-eurlex-system.md",
          toolset_scoped_web,
          "Verifica jurisprudencia y normativa europea (TJUE, EUR-Lex)"),
-        ("verificador-boe", modelo_haiku, "sub-boe-system.md",
+        ("verificador-boe", modelo_boe, "sub-boe-system.md",
          toolset_scoped_fetch_only,
          "Verifica normativa estatal española y vigencia temporal"),
-        ("verificador-doctrina", modelo_opus, "sub-doctrina-system.md",
+        ("verificador-doctrina", modelo_doctrina, "sub-doctrina-system.md",
          toolset_full,
          "Verifica doctrina académica jurídica"),
     ]
